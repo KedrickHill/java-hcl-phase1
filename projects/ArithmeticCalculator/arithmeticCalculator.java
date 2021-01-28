@@ -9,7 +9,7 @@ public class arithmeticCalculator {
     final static float D = 76.43f;
     final static int Z = 0; 
 
-    
+
         public static void main(String[] args) {
 
             // show simple add, sub, mult, and div methods
@@ -54,9 +54,25 @@ public class arithmeticCalculator {
             System.out.println("The sum of the obj: " + obj.getSum());
 
 
-           
+           // using a loop
+           obj.setSum(0);
+
+           // does the equation: 10!
+           for (int i = 10; i > 0; i--) {
+               obj.multiply(i);            
+           }
+           System.out.println("10! =  " + obj.getSum());
            
 
+           // reset and do the equation: summation 56
+
+           obj.setSum(0);
+
+           for (int i = 1; i < 56; i++) {
+               obj.add(i);
+           }
+
+           System.out.println("The summation of all values between [1-56] = " + obj.getSum());
             //
             
 
