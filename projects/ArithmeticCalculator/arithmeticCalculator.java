@@ -5,6 +5,9 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 import java.util.stream.Collectors;
+
+import javax.xml.ws.soap.AddressingFeature;
+
 import Addition.*;
 import Division.*;
 import Multiplication.*;
@@ -12,6 +15,7 @@ import Subtraction.*;
 
 public class arithmeticCalculator {
 
+    // create variables that are unchangable and hold static flag that can be type casted later
     final static int A = 12;
     final static int B = -67;
     final static float C = 32.4f;
@@ -19,22 +23,45 @@ public class arithmeticCalculator {
     final static int Z = 0; 
 
     /**
-     * TODO: Variables
-     * TODO: data types
-     * TODO: operators
      * TODO: type casting
-     * TODO: control statements
-     * TODO: class
-     * TODO: objects
-     * TODO: final, this, and static
      */
 
         public static void main(String[] args) {
-            // create variables that can be type casted later
+
+            // show simple add, sub, mult, and div methods
+            addition Oa = new addition();
+            subtraction Os = new subtraction();
+            multiplication Om = new multiplication();
+            division Od = new division();
+            
+            Oa.add(C,D);
+            System.out.println("The sum of C + D = " + Oa.getSum());
+
+            Os.subtract(C, D);
+            System.out.println("The sum of C + D = " + Os.getSum());
+
+            Om.multiply(C, D);
+            System.out.println("The sum of C + D = " + Om.getSum());
+
+            Od.divide(C, D);
+            System.out.println("The sum of C + D = " + Od.getSum());
+
+            // type cast the ints to floats and vice versa to so ex/implicit casting
+
+            float a = (float) A;
+            float b = (float) B;
+            float z = (float) Z;
+
+
+
+
+
+
+           
            
 
             //
-            System.out.println(B/A);
+            
 
     // //  List<String> oper = new ArrayList<>();
 
