@@ -12,6 +12,12 @@ import Subtraction.*;
 
 public class arithmeticCalculator {
 
+    final static int A = 12;
+    final static int B = -67;
+    final static float C = 32.4f;
+    final static float D = 76.43f;
+    final static int Z = 0; 
+
     /**
      * TODO: Variables
      * TODO: data types
@@ -20,19 +26,15 @@ public class arithmeticCalculator {
      * TODO: control statements
      * TODO: class
      * TODO: objects
-     * TODO: access modifiers
      * TODO: final, this, and static
      */
 
         public static void main(String[] args) {
             // create variables that can be type casted later
-            int a = 12;
-            int b = -67;
-            float c = 32.4f;
-            float d = 76.43f;
+           
 
             //
-            System.out.println(b/a);
+            System.out.println(B/A);
 
     // //  List<String> oper = new ArrayList<>();
 
