@@ -38,13 +38,13 @@ public class arithmeticCalculator {
             System.out.println("The sum of C + D = " + Oa.getSum());
 
             Os.subtract(C, D);
-            System.out.println("The sum of C + D = " + Os.getSum());
+            System.out.println("The sum of C - D = " + Os.getSum());
 
             Om.multiply(C, D);
-            System.out.println("The sum of C + D = " + Om.getSum());
+            System.out.println("The sum of C x D = " + Om.getSum());
 
             Od.divide(C, D);
-            System.out.println("The sum of C + D = " + Od.getSum());
+            System.out.println("The sum of C / D = " + Od.getSum());
 
             // type cast the ints to floats and vice versa to so ex/implicit casting
 
