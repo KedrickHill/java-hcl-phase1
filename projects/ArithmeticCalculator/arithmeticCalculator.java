@@ -1,17 +1,4 @@
-import java.io.*;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-import java.util.Scanner;
-import java.util.stream.Collectors;
-
-import javax.xml.ws.soap.AddressingFeature;
-
-import Addition.*;
-import Division.*;
-import Multiplication.*;
-import Subtraction.*;
+import Arithmetic.*;
 
 public class arithmeticCalculator {
 
@@ -22,39 +9,49 @@ public class arithmeticCalculator {
     final static float D = 76.43f;
     final static int Z = 0; 
 
-    /**
-     * TODO: type casting
-     */
-
+    
         public static void main(String[] args) {
 
             // show simple add, sub, mult, and div methods
-            addition Oa = new addition();
-            subtraction Os = new subtraction();
-            multiplication Om = new multiplication();
-            division Od = new division();
+           arithmetic obj = new arithmetic();
             
-            Oa.add(C,D);
-            System.out.println("The sum of C + D = " + Oa.getSum());
+            obj.add(C);
+            obj.multiply(D);
+            obj.divide(C, "hi"); // "num" is the only string that alters this - puts it as numerator
+            obj.subtract(D, "hi"); // "first" is th only string that alters this - puts it as the leading value 
+            obj.divide(D, "NUM"); // does not matter what Cases teh characters are - applies to subtract too
+            obj.subtract(C, "FiRsT");
 
-            Os.subtract(C, D);
-            System.out.println("The sum of C - D = " + Os.getSum());
+            // print the final result
+            System.out.println(obj.getSum());
 
-            Om.multiply(C, D);
-            System.out.println("The sum of C x D = " + Om.getSum());
+            // reset object
+            obj.setSum(0);
 
-            Od.divide(C, D);
-            System.out.println("The sum of C / D = " + Od.getSum());
-
+            
             // type cast the ints to floats and vice versa to so ex/implicit casting
-
             float a = (float) A;
             float b = (float) B;
             float z = (float) Z;
 
+            System.out.println("New a: " + a + " ; New b: " + b + "; New z: " + z); // 12.0 ; -67.0 ; 0.0
 
+            // prove that these new ones work
+            obj.multiply(a);
+            obj.add(z);
+            obj.subtract(b, "add");
+            obj.multiply(D);
+            obj.divide(b, "denom");
+            obj.multiply(z);
 
+            // print the result of the obj which should be : 0
+            System.out.println("The sum of the obj: " + obj.getSum());
 
+            // what happens when we divide by zero
+            obj.add(C);
+            obj.divide(z, "uh-oh"); // should spawn error message
+
+            System.out.println("The sum of the obj: " + obj.getSum());
 
 
            
