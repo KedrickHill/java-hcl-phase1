@@ -1,7 +1,5 @@
 package Arithmetic;
 
-import java.util.Optional;
-
 public class arithmetic {
 
     float sum = 0;
