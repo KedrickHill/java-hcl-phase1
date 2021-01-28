@@ -1,5 +1,3 @@
-import java.io.ObjectInputStream.GetField;
-
 /**
  * A Simple methods class that demonstrates the work of methods
  */
