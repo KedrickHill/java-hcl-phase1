@@ -23,7 +23,7 @@ public class arithmeticCalculator {
             obj.subtract(C, "FiRsT");
 
             // print the final result
-            System.out.println(obj.getSum());
+            System.out.println("The sum of the obj is: " + obj.getSum());
 
             // reset object
             obj.setSum(0);
@@ -34,7 +34,7 @@ public class arithmeticCalculator {
             float b = (float) B;
             float z = (float) Z;
 
-            System.out.println("New a: " + a + " ; New b: " + b + "; New z: " + z); // 12.0 ; -67.0 ; 0.0
+            System.out.println("\nNew a: " + a + " ; New b: " + b + "; New z: " + z); // 12.0 ; -67.0 ; 0.0
 
             // prove that these new ones work
             obj.multiply(a);
@@ -45,13 +45,13 @@ public class arithmeticCalculator {
             obj.multiply(z);
 
             // print the result of the obj which should be : 0
-            System.out.println("The sum of the obj: " + obj.getSum());
+            System.out.println("\nThe sum of the obj: " + obj.getSum() + "\n");
 
             // what happens when we divide by zero
             obj.add(C);
             obj.divide(z, "uh-oh"); // should spawn error message
 
-            System.out.println("The sum of the obj: " + obj.getSum());
+            System.out.println("\nThe sum of the obj: " + obj.getSum());
 
 
            // using a loop
@@ -61,7 +61,7 @@ public class arithmeticCalculator {
            for (int i = 10; i > 0; i--) {
                obj.multiply(i);            
            }
-           System.out.println("10! =  " + obj.getSum());
+           System.out.println("\n10! =  " + obj.getSum());
            
 
            // reset and do the equation: summation 56
@@ -72,7 +72,7 @@ public class arithmeticCalculator {
                obj.add(i);
            }
 
-           System.out.println("The summation of all values between [1-56] = " + obj.getSum());
+           System.out.println("\nThe summation of all values between [1-56] = " + obj.getSum() + "\n");
 
     }
 }
