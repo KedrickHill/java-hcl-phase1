@@ -19,7 +19,7 @@ public class arithmeticCalculator {
             obj.multiply(D);
             obj.divide(C, "hi"); // "num" is the only string that alters this - puts it as numerator
             obj.subtract(D, "hi"); // "first" is th only string that alters this - puts it as the leading value 
-            obj.divide(D, "NUM"); // does not matter what Cases teh characters are - applies to subtract too
+            obj.divide(D, "NUM"); // does not matter what Cases the characters are - applies to subtract too
             obj.subtract(C, "FiRsT");
 
             // print the final result
@@ -73,33 +73,6 @@ public class arithmeticCalculator {
            }
 
            System.out.println("The summation of all values between [1-56] = " + obj.getSum());
-            //
-            
-
-    // //  List<String> oper = new ArrayList<>();
-
-    // // Open a scanner to take in user input
-    //  Scanner in = new Scanner(System.in);
-
-    //  // Ask for the input from the user for the operation
-    //  System.out.println("Enter the operation: ");
-    //  String input = in.nextLine();
-
-    //  // Split the operation can be sparsed through
-    //  String[] op = input.split("([+-x/ ])");  
-    //  //TODO: figure out why the split is not working corretly
-
-    //  // Prints the splitted array to check its contents
-    //  for (String string : op) {
-    //      System.out.println("The Array: " + string);
-    //  }
-
-    //  // convert array to list so that it displayed and used easier
-    //  List<String> operation = Arrays.asList(op);
-    //  in.close();
-                
-    //  // print to confirm the operation is seperated correctly
-    //  System.out.println("The List contains: " + operation);
 
     }
 }
