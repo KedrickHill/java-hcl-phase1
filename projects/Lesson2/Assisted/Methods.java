@@ -25,12 +25,4 @@ public class Methods {
 
     public double add(double a, double b) { return a+b; }
     
-    public static void main(String[] args) {
-
-        Methods obj = new Methods();
-
-        double floatDouble = (double) obj.getMyFloat();
-
-        System.out.println("The added doubles equal: " + obj.add(obj.getMyDouble(), floatDouble));
-    }
 }
