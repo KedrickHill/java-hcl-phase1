@@ -127,6 +127,17 @@ public class Main {
 
          InnerClass innerClass = new InnerClass("test1");
          System.out.println(innerClass.useMyInnerClass());
+
+         /**
+     * ARRAYS
+     */
+
+     ArraysEx arr = new ArraysEx();
+     arr.TestArray();
+     
     }
     
+
+    
+
 }
