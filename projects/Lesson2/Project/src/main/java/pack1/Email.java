@@ -1,6 +1,7 @@
 import java.util.List;
 
 public class Email {
+
     private String from;
     private List<String> recipients;
     private String message;
@@ -19,11 +20,11 @@ public class Email {
         this.from = from;
     }
 
-    public List<String> getRecipients() {git
+    public List<String> getRecipients() {
         return recipients;
     }
 
-    public void setTo(List<String> recipients) {
+    public void setRecipients(List<String> recipients) {
         this.recipients = recipients;
     }
 
@@ -35,5 +36,8 @@ public class Email {
         this.message = message;
     }
 
+    public void display(String from) {
+        //TODO: Should display a email from so and so.
+    }
     
 }
