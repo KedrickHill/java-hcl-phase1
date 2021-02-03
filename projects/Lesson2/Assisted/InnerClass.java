@@ -27,12 +27,7 @@ public class InnerClass {
         public String getMyMember2() {
             return myMember2;
         }
-
-        public String getMyMember1() {
-            return myMember1;
-        }
-
-        
+      
     }
 
     

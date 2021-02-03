@@ -1,4 +1,3 @@
-import java.util.ArrayList;
 
 /**
  * this is a simple constructor for a practice session with constructors
