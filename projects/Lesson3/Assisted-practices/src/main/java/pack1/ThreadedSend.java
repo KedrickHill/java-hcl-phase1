@@ -3,7 +3,6 @@ package pack1;
 public class ThreadedSend extends Thread {
 
     private String msg;
-    private Thread t;
     ThreadSender sender;
 
     public ThreadedSend(String msg, ThreadSender sender) {
