@@ -6,6 +6,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.util.Scanner;
 
 public class FileHandlingMain 
 {
@@ -19,12 +20,13 @@ public class FileHandlingMain
 
     public static void main( String[] args ) throws IOException
     {
-        // System.out.println( "Hello World!" );
 
-        txtFile = new File("myTextFile.txt");
-        FileWriter wr = new FileWriter(txtFile.getName());
+        Scanner input = new Scanner(System.in);
+        // txtFile = new File("myTextFile.txt");
+        System.out.print("Enter a File Name: ");
 
-        //TODO: Create and Read a File
+        File txtFile = new File(input.nextLine());
+
         try {
             System.out.println("Creating File Named: " + txtFile.getName());
 
@@ -39,7 +41,7 @@ public class FileHandlingMain
             writeToFile(txtFile);
             displayFileContents(txtFile);
             appendToFile(txtFile);
-            txtFile.delete();
+            // txtFile.delete();
                       
 
         }
@@ -71,7 +73,6 @@ public class FileHandlingMain
     public static void writeToFile(File file) {
         try {
             FileWriter wr = new FileWriter(file.getName());
-            //TODO: write to a file
             System.out.println("\nWRITING TO: " + file.getName());
             System.out.println("WRITING...");
             wr.write(QUESTION);
@@ -82,9 +83,33 @@ public class FileHandlingMain
         }
     }
 
-    public static void appendToFile(File file) {
-                //TODO: append to a file    
+    public static void writeToFile(File file, String msg) {
+        try {
+            FileWriter wr = new FileWriter(file.getName());
+            System.out.println("\nWRITING TO: " + file.getName());
+            System.out.println("WRITING...");
+            wr.write(msg);
+            System.out.println("Succesfully wrote to " + file.getName() + " .");
+            wr.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
 
+    public static void appendToFile(File file, String msg) {
+        try {
+            FileWriter wr = new FileWriter(file.getName(), true);
+            System.out.println("\nWRITING TO: " + file.getName());
+            System.out.println("WRITING...");
+            wr.write(msg);
+            System.out.println("Succesfully wrote to " + file.getName() + " .");
+            wr.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void appendToFile(File file) {
         try {
             FileWriter wr = new FileWriter(file.getName(), true);
             System.out.println("\nWRITING TO: " + file.getName());
@@ -103,6 +128,7 @@ public class FileHandlingMain
         System.out.println("File Path: " + file.getAbsolutePath());
         System.out.println("Can Read:  " + file.canRead());
         System.out.println("Can Write: " + file.canWrite());
+        System.out.println("File Size: " + file.length() + " bytes");
 
     }
 
