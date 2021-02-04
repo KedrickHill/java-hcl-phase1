@@ -69,7 +69,7 @@ public class MainApplication {
 
             // Searches the list for matches
             else if (in.toLowerCase().equals("search")) {
-                 System.out.println("\nEnter an email to search or ('done'): ");
+                 System.out.println("\nEnter an email to search");
                 //  Iterator<EmailID> iter = employeeEmails.iterator();
                  String matchStr = input.nextLine();
         
