@@ -37,16 +37,28 @@ public class FileHandlingMain
             }
 
             fileInfo(txtFile);
-            writeToFile(txtFile);
+            System.out.println("\nType a Message to Write: ");
+            writeToFile(txtFile, input.nextLine());
+
             displayFileContents(txtFile);
-            appendToFile(txtFile);
-            // txtFile.delete();
+
+            System.out.println("\nType Another Message: ");
+            appendToFile(txtFile, input.nextLine());
+
+            displayFileContents(txtFile);
+
+            System.out.println("DELETING FILE...");
+            txtFile.delete();
+            System.out.println(txtFile.getName() + " DELETED");
                       
 
         }
         catch (FileNotFoundException e1) {
             System.err.println("File Not Found.");
 
+        }
+        finally {
+            input.close();
         }
 
 
