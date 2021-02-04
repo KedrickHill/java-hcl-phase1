@@ -10,7 +10,6 @@ import java.util.Scanner;
 
 public class FileHandlingMain 
 {
-    private static File txtFile;
     final static String QUESTION = "----------------------------------------------\n" +
                       "What do you want to add to your grocery list?\n" +
                       "----------------------------------------------\n";
@@ -53,6 +52,10 @@ public class FileHandlingMain
 
     }
 
+    /**
+     * Displays all of the given files current contents
+     * @param file - valid File
+     */
     public static void displayFileContents(File file) {
         try {
             BufferedReader in = new BufferedReader(new FileReader(file));
@@ -70,6 +73,10 @@ public class FileHandlingMain
         
     }
 
+    /**
+     * Writes to a given file inputting a standard global string
+     * @param file - valid File
+     */
     public static void writeToFile(File file) {
         try {
             FileWriter wr = new FileWriter(file.getName());
@@ -83,6 +90,11 @@ public class FileHandlingMain
         }
     }
 
+    /**
+     * Writes to a given file inputting the given user input
+     * @param file - valid File
+     * @param msg - user input string
+     */
     public static void writeToFile(File file, String msg) {
         try {
             FileWriter wr = new FileWriter(file.getName());
@@ -96,24 +108,15 @@ public class FileHandlingMain
         }
     }
 
-    public static void appendToFile(File file, String msg) {
-        try {
-            FileWriter wr = new FileWriter(file.getName(), true);
-            System.out.println("\nWRITING TO: " + file.getName());
-            System.out.println("WRITING...");
-            wr.write(msg);
-            System.out.println("Succesfully wrote to " + file.getName() + " .");
-            wr.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
+    /**
+     * Appends to a given file and inputs a standard global string
+     * @param file - valid File
+     */
     public static void appendToFile(File file) {
         try {
             FileWriter wr = new FileWriter(file.getName(), true);
             System.out.println("\nWRITING TO: " + file.getName());
-            System.out.println("WRITING...");
+            System.out.println("APPENDING...");
             wr.write(REPLY);
             System.out.println("Succesfully wrote to " + file.getName() + " .");
             wr.close();
@@ -122,6 +125,28 @@ public class FileHandlingMain
         }
     }
 
+    /**
+     * Appends to a given file and inputs a user given string message
+     * @param file - valid File
+     * @param msg - user input string
+     */
+    public static void appendToFile(File file, String msg) {
+        try {
+            FileWriter wr = new FileWriter(file.getName(), true);
+            System.out.println("\nWRITING TO: " + file.getName());
+            System.out.println("APPENDING...");
+            wr.write(msg);
+            System.out.println("Succesfully wrote to " + file.getName() + " .");
+            wr.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * Displays the given files info
+     * @param file - valid File
+     */
     public static void fileInfo(File file) {
 
         System.out.println("\nFile Name: " + file.getName());
