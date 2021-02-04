@@ -3,8 +3,6 @@ package pack1;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Iterator;
-import java.util.ListIterator;
-import java.util.NoSuchElementException;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -69,6 +67,7 @@ public class MainApplication {
                 }
             }
 
+            // Searches the list for matches
             else if (in.toLowerCase().equals("search")) {
                  System.out.println("\nEnter an email to search or ('done'): ");
                 //  Iterator<EmailID> iter = employeeEmails.iterator();
@@ -79,12 +78,15 @@ public class MainApplication {
                     // Matcher mat = user.matcher(iter.next().displayEmail());
                     System.out.println("\nMatching Emails: ");
                     for (EmailID email : employeeEmails) {
+
+                        // if it finds a match it will display it
                         Matcher mat = user.matcher(email.displayEmail());
                           if(mat.find()) {
                               System.out.println(email.displayEmail());
                            }
                         }
                         
+                        // checks with a user to see if they will search again
                         System.out.println("\nSearch for another? (Y/N) ");
 
                         if(input.nextLine().toLowerCase().equals("y")) 
@@ -93,8 +95,6 @@ public class MainApplication {
                             in = "menu";
                      }
                     
-                
-    
              else {
                  System.out.println("\nInvalid Type! Please try again.");
                  in = "menu";
