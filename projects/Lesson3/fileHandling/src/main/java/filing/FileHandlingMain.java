@@ -42,14 +42,18 @@ public class FileHandlingMain
 
             displayFileContents(txtFile);
 
-            System.out.println("\nType Another Message: ");
-            appendToFile(txtFile, input.nextLine());
 
-            displayFileContents(txtFile);
+            do {
+                System.out.println("\nType Another Message or ('exit'): ");
+                appendToFile(txtFile, input.nextLine());
+
+                displayFileContents(txtFile);
+            } while (!input.nextLine().toLowerCase().equals("exit"));
+           
 
             System.out.println("DELETING FILE...");
             txtFile.delete();
-            System.out.println(txtFile.getName() + " DELETED");
+            System.out.println(txtFile.getName() + " WAS DELETED");
                       
 
         }
@@ -95,7 +99,7 @@ public class FileHandlingMain
             System.out.println("\nWRITING TO: " + file.getName());
             System.out.println("WRITING...");
             wr.write(QUESTION);
-            System.out.println("Succesfully wrote to " + file.getName() + " .");
+            System.out.println("Succesfully wrote to " + file.getName() + ".");
             wr.close();
         } catch (IOException e) {
             e.printStackTrace();
@@ -147,7 +151,7 @@ public class FileHandlingMain
             FileWriter wr = new FileWriter(file.getName(), true);
             System.out.println("\nWRITING TO: " + file.getName());
             System.out.println("APPENDING...");
-            wr.write(msg);
+            wr.write(" " + msg);
             System.out.println("Succesfully wrote to " + file.getName() + " .");
             wr.close();
         } catch (IOException e) {
