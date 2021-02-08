@@ -3,13 +3,8 @@ package Sequence;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
-/**
- * Hello world!
- *
- */
+
 public class SequenceMain 
 {
 
@@ -20,16 +15,23 @@ public class SequenceMain
 
         Random rand = new Random();
 
-        for (int i = 0; i < 100; i++) {
-            list.add(rand.nextInt(20));
+        for (int i = 0; i < 100000; i++) {
+            list.add(rand.nextInt(10001));
         }
 
-        System.out.println(list);
+        // // uncomment if you want to see the entire list
+        // System.out.println(list);
 
+        System.out.println("Length of the List: " + list.size());
 
-        
-        //TODO: setup a list that contains a large list of values
-        //TODO: Stream values and map them according to their key and value++
-        //TODO: print frequencies
+        LongestSequence lgs = new LongestSequence();
+
+        lgs = lgs.longestSeq(list);
+
+        System.out.println("\nLongest Sequence Starts at: " + lgs.getStart());
+        System.out.println("Longest Sequence Ends at: " + lgs.getEnd());
+        System.out.println("Longest Sequence has a Length of: " + lgs.getLen());
+
+        System.out.println("\nThe Subsequence: " + list.subList(lgs.getStart(), lgs.getEnd()));
     }
 }

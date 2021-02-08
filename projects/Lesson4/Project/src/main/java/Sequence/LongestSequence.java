@@ -1,12 +1,14 @@
 package Sequence;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
-public class LongestSequence {
-    int start;
-    int end;
-    int len;
+public class LongestSequence  {
+    int start = 0;
+    int end = 0;
+    int len = 0;
     List<LongestSequence> lens = new ArrayList<LongestSequence>();
 
     public LongestSequence(int start, int end, int len) {
@@ -38,32 +40,49 @@ public class LongestSequence {
     }
 
     public void setLen() {
-        this.len = start + end;
+        this.len = (end - start) + 1;
     }
 
-    private List<Integer> longSeq(List<Integer> list) {
-        for (int i = 0; i < list.size(); i++) {
-            if(list.size() >= 1) {
-                return list;
+    public LongestSequence longestSeq(List<Integer> list) {
+        LongestSequence longSeq = new LongestSequence(0,0,0);
+        for (int i = 0; i < list.size() - 1; i++) {
+            // System.out.println("Current Index: " + (i+1));
+            // System.out.println("CHECKING: " + list.get(i) + " > " + list.get(i+1));
+            //base case: end of the list
+            if (list.isEmpty()) {
+               return longSeq;
             }
-            else if(list.get(i) < list.get(i++)) {
-                setStart(list.indexOf(i));
-            }
-            else {
-                setEnd(list.indexOf(i));
+            // when next.index is null then add remaining sequence and break
+            else if (list.get(i).equals(list.size()-1)) {
+                setEnd(i++);
                 setLen();
                 lens.add(new LongestSequence(getStart(), getEnd(), getLen()));
             }
-            for (LongestSequence seq : list) {
-                
+            //check values for descending trait
+            else if(list.get(i) > list.get(i+1)) {
+                setEnd(i);
+                setLen();
+                lens.add(new LongestSequence(getStart(), getEnd(), getLen()));
+                setStart(i+1);           
             }
+            else
+                continue;
         }
-    }
+        
+        List<LongestSequence> sortedLens = lens.stream().sorted(Comparator.comparing(LongestSequence::getLen)).collect(Collectors.toList());
+    
 
+        // // user this to see all subsequences sorted by length
+        // for (LongestSequence s : sortedLens) {
+        //     System.out.println("\nThe Start of this sequence: " + s.getStart());
+        //     System.out.println("The End of this sequence: " + s.getEnd());
+        //     System.out.println("The length of this sequence: " + s.getLen());
+        // }
 
-    private Boolean longer(LongestSequence seq) {
-
-    }
+        longSeq = sortedLens.get(sortedLens.size()-1);
+        return longSeq;
+    }    
 
     
+
 }
