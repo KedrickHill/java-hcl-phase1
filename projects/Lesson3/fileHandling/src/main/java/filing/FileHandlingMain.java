@@ -19,6 +19,7 @@ public class FileHandlingMain
 
     public static void main( String[] args ) throws IOException
     {
+        String msg ="";
 
         Scanner input = new Scanner(System.in);
         // txtFile = new File("myTextFile.txt");
@@ -42,18 +43,20 @@ public class FileHandlingMain
 
             displayFileContents(txtFile);
 
+            //TODO: when file size is greater than 0, ask the user if they want to overwrite.
 
             do {
                 System.out.println("\nType Another Message or ('exit'): ");
-                appendToFile(txtFile, input.nextLine());
+                msg = input.nextLine();
+                appendToFile(txtFile, msg);
 
                 displayFileContents(txtFile);
-            } while (!input.nextLine().toLowerCase().equals("exit"));
+            } while (!msg.toLowerCase().equals("exit"));
            
 
-            System.out.println("DELETING FILE...");
+            System.out.println("\nDELETING FILE...");
             txtFile.delete();
-            System.out.println(txtFile.getName() + " WAS DELETED");
+            System.out.println(txtFile.getName() + " WAS DELETED\n");
                       
 
         }
