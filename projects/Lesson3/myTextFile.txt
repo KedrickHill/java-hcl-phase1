@@ -1,8 +1,0 @@
-----------------------------------------------
-What do you want to add to your grocery list?
-----------------------------------------------
-
-This is the stuff that will be going into the shopping list-Eggs
--Milk
--Oranges
--Bacon
