@@ -43,6 +43,14 @@ public class LongestSequence  {
         this.len = (end - start) + 1;
     }
 
+    /**
+     * longestSeq takes a list of integers and looks through the list for all subsequences and 
+     * stores them in a class ArrayList. Finally it sorts the list and retrieves the last
+     * sequence and returns it.
+     * 
+     * @param list - randomized list from main
+     * @return - longest subsequence from list
+     */
     public LongestSequence longestSeq(List<Integer> list) {
         LongestSequence longSeq = new LongestSequence(0,0,0);
         for (int i = 0; i < list.size() - 1; i++) {
