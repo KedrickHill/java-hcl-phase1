@@ -67,7 +67,7 @@ public class LongestSequence  {
                 lens.add(new LongestSequence(getStart(), getEnd(), getLen()));
             }
             //check values for descending trait
-            else if(list.get(i) > list.get(i+1)) {
+            else if(list.get(i) >= list.get(i+1)) {
                 setEnd(i);
                 setLen();
                 lens.add(new LongestSequence(getStart(), getEnd(), getLen()));
