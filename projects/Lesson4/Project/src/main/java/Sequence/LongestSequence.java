@@ -54,8 +54,10 @@ public class LongestSequence  {
     public LongestSequence longestSeq(List<Integer> list) {
         LongestSequence longSeq = new LongestSequence(0,0,0);
         for (int i = 0; i < list.size() - 1; i++) {
+
             // System.out.println("Current Index: " + (i+1));
             // System.out.println("CHECKING: " + list.get(i) + " > " + list.get(i+1));
+
             //base case: end of the list
             if (list.isEmpty()) {
                return longSeq;
@@ -80,7 +82,7 @@ public class LongestSequence  {
         List<LongestSequence> sortedLens = lens.stream().sorted(Comparator.comparing(LongestSequence::getLen)).collect(Collectors.toList());
     
 
-        // // user this to see all subsequences sorted by length
+        // // use this to see all subsequences sorted by length
         // for (LongestSequence s : sortedLens) {
         //     System.out.println("\nThe Start of this sequence: " + s.getStart());
         //     System.out.println("The End of this sequence: " + s.getEnd());
